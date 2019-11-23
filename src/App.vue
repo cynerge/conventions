@@ -1,13 +1,26 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link> |
-            <router-link to="/dropdowns">Dropdowns</router-link>
-        </div>
-        <router-view />
-    </div>
+<div id="app">
+  <SideMenu/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/dropdowns">Dropdowns</router-link>
+  </div>
+  <router-view />
+</div>
 </template>
+
+<script>
+// @ is an alias to /src
+import SideMenu from '@/components/layout/SideMenu.vue';
+
+export default {
+    name: 'App',
+    components: {
+        SideMenu
+    }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -15,7 +28,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: #282551;
 }
 
 #nav {
@@ -23,10 +36,10 @@
 
     a {
         font-weight: bold;
-        color: #2c3e50;
+        color: #282551;
 
         &.router-link-exact-active {
-            color: #42b983;
+            color: #282551; // $cyn-blue
         }
     }
 }
