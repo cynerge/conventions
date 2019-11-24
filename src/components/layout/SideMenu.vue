@@ -41,6 +41,7 @@ export default {
     cursor: pointer;
     border-bottom: 1px solid lightgray;
     .side-menu-logo {
+      transition: all .33s ease;
       height: 40px;
       padding: 5px;
     }
@@ -62,6 +63,11 @@ export default {
   }
   &.expanded {
     width: 250px;
+    .logo-container {
+      .side-menu-logo {
+        height: 100px;
+      }
+    }
     .nav-items {
       li {
         opacity: 1;

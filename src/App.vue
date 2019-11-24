@@ -40,7 +40,7 @@ export default {
   text-align: center;
   color: #282551;
   .main-view {
-    transition: all .5s ease-in-out;
+    transition: all .33s ease-in-out;
     position: fixed;
     top: 0;
     left: 55px;
