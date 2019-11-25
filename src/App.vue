@@ -16,13 +16,16 @@ export default {
       expanded: true,
       navItems: [{
         text: 'Home',
-        link: '/'
+        link: '/',
+        icon: 'home.png'
       }, {
         text: 'About',
         link: '/about',
+        icon: 'lego.png'
       }, {
         text: 'Components',
-        link: '/dropdowns'
+        link: '/dropdowns',
+        icon: 'lego.png'
       }]
     };
   },
