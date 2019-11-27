@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import SideMenu from '@/components/layout/SideMenu.vue';
+import { AwardIcon, HomeIcon, CodesandboxIcon } from 'vue-feather-icons'
 
 export default {
   name: 'App',
@@ -17,15 +18,15 @@ export default {
       navItems: [{
         text: 'Home',
         link: '/',
-        icon: 'home.png'
+        icon: HomeIcon
       }, {
         text: 'About',
         link: '/about',
-        icon: 'lego.png'
+        icon: AwardIcon
       }, {
         text: 'Components',
         link: '/dropdowns',
-        icon: 'lego.png'
+        icon: CodesandboxIcon
       }]
     };
   },

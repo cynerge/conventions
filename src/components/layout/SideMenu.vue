@@ -6,7 +6,8 @@
     <ul class="nav-items">
       <li v-on:click="goTo(item)" v-bind:class="{ 'active': active === item.text }" v-for="item of items" v-bind:key="item.text">
         <span>{{item.text}}</span>
-        <img class="nav-icon" alt="Cynerge logo" :src="require('../../assets/' + item.icon)" />
+        <component class="nav-icon" :is="item.icon"></component>
+        <!-- <img class="nav-icon" :src="require('../../assets/' + item.icon)" /> -->
       </li>
     </ul>
   </div>
@@ -69,18 +70,6 @@ export default {
       flex-direction: row;
       align-items: center;
       height: 50px;
-      &.active, &:active {
-        background-color: #282551;
-        span {
-          color: #ff5500;
-        }
-      }
-      &:hover {
-        background-color: #ff5500;
-        span {
-          color: #282551;
-        }
-      }
       span {
         transition: all .2s ease;
         opacity: 0;
@@ -88,12 +77,35 @@ export default {
         width: 0px;
       }
       .nav-icon {
-        transition: all .2s ease;
+        color: #282551;
+        transition: all .33s ease;
         opacity: 1;
         height: 32px;
         width: 32px;
         position: relative;
         left: 0%;
+      }
+      &.active, &:active {
+        background-color: #282551;
+        color: #ff5500;
+        span {
+          color: #ff5500;
+        }
+        .nav-icon {
+          background-color: #282551;
+          color: #ff5500;
+        }
+      }
+      &:hover {
+        background-color: #ff5500;
+        color: #282551;
+        span {
+          color: #282551;
+        }
+        .nav-icon {
+          background-color: #ff5500;
+          color: #282551;
+        }
       }
     }
   }
