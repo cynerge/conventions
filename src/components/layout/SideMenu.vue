@@ -77,6 +77,7 @@ export default {
         width: 0px;
       }
       .nav-icon {
+        background-color: transparent;
         color: #282551;
         transition: all .33s ease;
         opacity: 1;
@@ -92,7 +93,6 @@ export default {
           color: #ff5500;
         }
         .nav-icon {
-          background-color: #282551;
           color: #ff5500;
         }
       }
@@ -103,7 +103,6 @@ export default {
           color: #282551;
         }
         .nav-icon {
-          background-color: #ff5500;
           color: #282551;
         }
       }
@@ -127,7 +126,6 @@ export default {
           opacity: 0;
           height: 0px;
           width: 0px;
-          position: relative;
           left: -50%;
         }
       }
