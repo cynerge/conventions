@@ -7,7 +7,6 @@
       <li v-on:click="goTo(item)" v-bind:class="{ 'active': active === item.text }" v-for="item of items" v-bind:key="item.text">
         <span>{{item.text}}</span>
         <component class="nav-icon" :is="item.icon"></component>
-        <!-- <img class="nav-icon" :src="require('../../assets/' + item.icon)" /> -->
       </li>
     </ul>
   </div>
