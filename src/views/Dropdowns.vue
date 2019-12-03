@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CynDropdown :items="items" :selectedItem="selectedItem" />
+    <CynDropdown :items="items" />
   </div>
 </template>
 
@@ -14,8 +14,7 @@ export default {
   },
   data() {
     return {
-      items: [],
-      selectedItem: "None"
+      items: []
     };
   },
   mounted() {
