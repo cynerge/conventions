@@ -1,40 +1,33 @@
 <template>
-    <div id="dropdown-div">
-        <label for="users">Select Users:</label>
-        <br />
-        <select v-model="selected">
-            <option value disabled>Please Select a User</option>
-            <option v-bind:value="user.name" v-for="user in users" :key="user.id"
-                >{{ user.name }} | ID: {{ user.id }}</option
-            >
-        </select>
-        <p>Current user selected: {{ selected }}</p>
-    </div>
+  <div id="dropdown-div">
+    <label for="users">Select an Item:</label>
+    <br />
+    <select v-model="selectedItem">
+      <option value disabled>Please Select an item</option>
+      <option
+        v-for="item in items"
+        :value="item.name"
+        :key="item.id"
+        v-on:click="selectedItem = item">
+        {{ item.name }} | ID: {{ item.id }}</option>
+    </select>
+    <p>Current user selected: {{ selectedItem }}</p>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-    name: 'CynDropdown',
-    data() {
-        return {
-            users: null,
-            selected: 'None',
-            defaultSelected: 'Please select a user'
-        };
-    },
-    created() {
-        axios
-            .get('https://jsonplaceholder.typicode.com/users')
-            .then(res => {
-                this.users = res.data;
-            })
-            .catch(err => {
-                this.users = 'An error has occured: ' + err;
-            });
-    }
+  name: "CynDropdown",
+  props: {
+    items: Array
+  },
+  data() {
+    return {
+      selectedItem: "None"
+    };
+  }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
